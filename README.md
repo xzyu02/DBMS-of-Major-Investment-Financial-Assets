@@ -1,7 +1,30 @@
-## CS564-Final-Project
-- Project Name: Historical Comparison of Major Investment Vehicles
-- Group Members: Kaiwen Shi (kshi42@wisc.edu), Xizheng Yu (xyu354@wisc.edu), Yu Xing (xing35@wisc.edu)
+## Historical Comparison of Major Global Investments
 
-## Links:
-- [CheckPoint 1 Google Doc](https://docs.google.com/document/d/19wpiX-QRu7TO3zOWY4xtz111-e6vxOtdY4rdUp3xhbU/edit)
-- [CheckPoint 2 Google Doc](https://docs.google.com/document/d/1QbvbhLX564RaR9m_v-PTcX7WhtSXg4a_W4x0iucWMlI/edit)
+This is the repository for CS 564 Summer 2022 final group project. 
+
+The project is a database system that preserves the historical data of couple global investments, including **Stocks, Cryptocurrencies, Commodities, and Forex Tradings.** Details of this project will be filled as progress are made in the future.
+
+## ER Diagram
+Below is the ER diagram of our projects
+
+![image](./ER_Diagram.jpg)
+
+## Remaining Key deadlines
+| Affair | Deadline
+| --- | ---
+| Checkpoint 2 | 7.3
+| Midterm EXAM | 7.7
+| Checkpoint 3 | 7.21
+| Checkpoint 4 | 7.25
+| Project Group Presentation | Anyday between 7.30 - 8.4
+| End day of the course | 8.7
+
+## Checkpoint documents:
+- [CheckPoint 1](https://docs.google.com/document/d/19wpiX-QRu7TO3zOWY4xtz111-e6vxOtdY4rdUp3xhbU/edit)
+- [CheckPoint 2](https://docs.google.com/document/d/1QbvbhLX564RaR9m_v-PTcX7WhtSXg4a_W4x0iucWMlI/edit)
+
+## Contact
+Please contact any of our group members if you have further concerns: 
+- [Shi, Kaiwen](mailto:kshi42@wisc.edu)
+- [Yu, Xizheng](mailto:xyu354@wisc.edu) 
+- [Xing, Yu](mailto:xing35@wisc.edu)
