@@ -4,3 +4,4 @@
 
 ## Links:
 - [CheckPoint 1 Google Doc](https://docs.google.com/document/d/19wpiX-QRu7TO3zOWY4xtz111-e6vxOtdY4rdUp3xhbU/edit)
+- [CheckPoint 2 Google Doc](https://docs.google.com/document/d/1QbvbhLX564RaR9m_v-PTcX7WhtSXg4a_W4x0iucWMlI/edit)
