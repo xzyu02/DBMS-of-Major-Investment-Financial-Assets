@@ -28,3 +28,7 @@ Please contact any of our group members if you have further concerns:
 - [Shi, Kaiwen](mailto:kshi42@wisc.edu)
 - [Yu, Xizheng](mailto:xyu354@wisc.edu) 
 - [Xing, Yu](mailto:xing35@wisc.edu)
+
+## References
+- https://stackoverflow.com/questions/18992653/entity-relationship-diagram-how-does-the-is-a-relationship-translate-into-table
+- 3NF decompose algorithm - http://functionaldependencycalculator.ml/algorithm/7
