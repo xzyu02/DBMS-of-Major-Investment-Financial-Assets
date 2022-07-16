@@ -7,7 +7,7 @@ The project is a database system that preserves the historical data of couple gl
 ## ER Diagram
 Below is the ER diagram of our projects
 
-![image](./er.jpg)
+![image](./er.jpeg)
 
 ## Remaining Key deadlines
 | Affair | Deadline
