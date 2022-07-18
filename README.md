@@ -22,6 +22,7 @@ Below is the ER diagram of our projects
 ## Checkpoint documents:
 - [CheckPoint 1](https://docs.google.com/document/d/19wpiX-QRu7TO3zOWY4xtz111-e6vxOtdY4rdUp3xhbU/edit)
 - [CheckPoint 2](https://docs.google.com/document/d/1QbvbhLX564RaR9m_v-PTcX7WhtSXg4a_W4x0iucWMlI/edit)
+- [CheckPoint 3](https://github.com/jsswd888/cs564_Final_Project_CheckPoint3); NOTE that check point 3 is a coding section, which includes the implementation of **B+ Trees** in `java`.
 
 ## Contact
 Please contact any of our group members if you have further concerns: 
