@@ -17,7 +17,6 @@ HO=F,Heating Oil
 NG=F,Natural Gas
 RB=F,RBOB Gasoline
 BZ=F,Brent Crude Oil Last Day Financ
-B0=F,Mont Belvieu LDH Propane (OPIS)
 ZC=F,Corn Futures
 ZO=F,Oat Futures
 KE=F,KC HRW Wheat Futures
