@@ -8,6 +8,7 @@ The following dataset contains the historical prices of major world indexes.
 All dataset files are named in the following format: `Name.csv`
 
 **UPDATE 7.27:** processed final big dataset is `_stock_merged.csv`, with to extra cols add at right-most: `Name`, `Symbol`.
+
 ## Query method
 
 We can search for a specific index's historical price by: `country`;`STOCK_ID` (shown as the `Symbol` in `./_metadata.txt`);`FUll_Name`(shown as `Name` in `./metadata.txt`).
