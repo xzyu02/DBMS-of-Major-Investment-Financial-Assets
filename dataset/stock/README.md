@@ -5,6 +5,7 @@ The following dataset contains the historical prices of major world indexes.
 ## File naming principle
 
 ~~All dataset files are named in the following format: `COUNTRY_STOCK Name.csv`~~
+
 All dataset files are named in the following format: `Name.csv`
 
 **UPDATE 7.27:** processed final big dataset is `_stock_merged.csv`, with to extra cols add at right-most: `Name`, `Symbol`.
