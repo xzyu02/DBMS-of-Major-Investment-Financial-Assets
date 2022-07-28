@@ -9,6 +9,7 @@ The following dataset contains the historical prices of major world indexes.
 All dataset files are named in the following format: `Name.csv`
 
 **UPDATE 7.27:** processed final big dataset is `_stock_merged.csv`, with to extra cols add at right-most: `Name`, `Symbol`.
+**NOTE: ONLY `_stock_merged.csv` used for final databases!!! ONLY `_stock_merged.csv` used for final databases!!! ONLY `_stock_merged.csv` used for final databases!!!**
 
 ## Query method
 
@@ -21,12 +22,12 @@ The dataset is collected from *Yahoo Finance* using the open-source package `yfi
 `_scrape.ipynb` is used to complete the data collecting & converting process. See details in the jupyter notebook.
 `_metadata.txt` contains all basic information of stocks that we collected.
 
-## REF: Country code:
+## ~~REF: Country code:~~
 
-[USED: Olympic Ref Wikipedia](https://zh.wikipedia.org/wiki/%E5%9C%8B%E9%9A%9B%E5%A5%A7%E5%A7%94%E6%9C%83%E5%9C%8B%E5%AE%B6%E6%88%96%E5%9C%B0%E5%8D%80%E7%B7%A8%E7%A2%BC%E5%88%97%E8%A1%A8)
+~~[USED: Olympic Ref Wikipedia](https://zh.wikipedia.org/wiki/%E5%9C%8B%E9%9A%9B%E5%A5%A7%E5%A7%94%E6%9C%83%E5%9C%8B%E5%AE%B6%E6%88%96%E5%9C%B0%E5%8D%80%E7%B7%A8%E7%A2%BC%E5%88%97%E8%A1%A8)~~
 
 
-[NOT USED; 2 LETTER POSTAL REF](https://www.post.gov.tw/post/internet/Postal/sz_a_e_info.jsp) 
+~~[NOT USED; 2 LETTER POSTAL REF](https://www.post.gov.tw/post/internet/Postal/sz_a_e_info.jsp)~~ 
 
 ## Contact
 
