@@ -4,6 +4,12 @@ This is the repository for CS 564 Summer 2022 final group project.
 
 The project is a database system that preserves the historical data of couple global investments, including **Stocks, Cryptocurrencies, Commodities, and Forex Tradings.** Details of this project will be filled as progress are made in the future.
 
+## UPDATE NOTICES:
+- **7.27**: stock_merged.csv have format errors: need to clear whitespaces in first col (Symbol)
+- **7.27**: special character need to escape ('.'; '=') NOT ABLE TO SEARCH
+- **7.27**: crypto lack of **meta data**
+- **7.27**: foreign currency dataset cleansing **still NEEDED**
+
 ## ER Diagram
 Below is the ER diagram of our projects
 
@@ -22,7 +28,10 @@ Below is the ER diagram of our projects
 ## Checkpoint documents:
 - [CheckPoint 1](https://docs.google.com/document/d/19wpiX-QRu7TO3zOWY4xtz111-e6vxOtdY4rdUp3xhbU/edit)
 - [CheckPoint 2](https://docs.google.com/document/d/1QbvbhLX564RaR9m_v-PTcX7WhtSXg4a_W4x0iucWMlI/edit)
-- [CheckPoint 3](https://github.com/jsswd888/cs564_Final_Project_CheckPoint3); NOTE that check point 3 is a coding section, which includes the implementation of **B+ Trees** in `java`.
+- [CheckPoint 3](https://github.com/jsswd888/cs564_Final_Project_CheckPoint3)
+- [CheckPoint 4](https://docs.google.com/document/d/1N3F4TwZBfhCbsuFdNF103-FF0YPYEK1w4IMO-66yY7g/edit)
+  
+**NOTE** that check point 3 is a coding section, which includes the implementation of **B+ Trees** in `java`.
 
 ## Contact
 Please contact any of our group members if you have further concerns: 
