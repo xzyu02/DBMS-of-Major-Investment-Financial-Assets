@@ -2,10 +2,12 @@ from tkinter import *
 from tkinter import messagebox
 import mysql.connector
 
+from pages import pages
+
 def submit(username, password):
     user = username.get()
     # error case empty username
-    if username == "":
+    if not username:
         messagebox.showerror("Error", "Please enter Username")
         return
     key = password.get()
@@ -27,7 +29,7 @@ def connect_db(user, key):
     cursor.execute(query, [(user), (key)])
     result = cursor.fetchall()
     if result:
-        messagebox.showinfo("", "Congrats!") # for testing
+        pages(username)
         return True
     else:
         # username-password pair not in db
@@ -49,6 +51,7 @@ usernameEntry = Entry(home, textvariable=username).place(relx=0.5,rely=0.3,ancho
 passwordLabel = Label(home,text="Password").place(relx=0.5,rely=0.4,anchor='center') 
 password = StringVar()
 passwordEntry = Entry(home, textvariable=password, show='*').place(relx=0.5,rely=0.5,anchor='center') 
+
 
 # login button
 loginButton = Button(home, text="Login", command=submit, height=1, width = 8).place(relx=0.5,rely=0.6,anchor='center')
