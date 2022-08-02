@@ -34,5 +34,5 @@ private:
    double High[MAX_SIZE];
    double Low[MAX_SIZE];
    double Close[MAX_SIZE];
-   double Volume[MAX_SIZE];
+   long double Volume[MAX_SIZE];
 };
