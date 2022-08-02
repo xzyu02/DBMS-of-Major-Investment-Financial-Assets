@@ -39,23 +39,27 @@ def connect_db(user, key):
 
 # window
 home = Tk()
-home.geometry('300x300')
+home.geometry('300x450')
 home.title('Financial Assets Explorer')
 
+TitleLabel = Label(home, text="Welcome to Financial Assets Explorer! \n Please login in!").pack(ipadx=10, ipady=10, expand=False)
+
 # username label and text entry box
-usernameLabel = Label(home, text="Username").place(relx=0.5,rely=0.2,anchor='center')
+usernameLabel = Label(home, text="Username").pack(ipadx=10, ipady=10, expand=False)
 username = StringVar()
-usernameEntry = Entry(home, textvariable=username).place(relx=0.5,rely=0.3,anchor='center')
+usernameEntry = Entry(home, textvariable=username).pack(ipadx=10, ipady=10, expand=True)
 
 # password label and password entry box
-passwordLabel = Label(home,text="Password").place(relx=0.5,rely=0.4,anchor='center') 
+passwordLabel = Label(home,text="Password").pack(ipadx=10, ipady=10, expand=False)
 password = StringVar()
-passwordEntry = Entry(home, textvariable=password, show='*').place(relx=0.5,rely=0.5,anchor='center') 
+passwordEntry = Entry(home, textvariable=password, show='*').pack(ipadx=10, ipady=10, expand=True)
 
 
 # login button
-loginButton = Button(home, text="Login", command=submit, height=1, width = 8).place(relx=0.5,rely=0.6,anchor='center')
+loginButton = Button(home, text="Login", command=submit, height=1, width = 10).pack(ipadx=10, ipady=10, expand=True)
 
+# create account
+createButton = Button(home, text="Create Account", command=submit, height=1, width = 10).pack(ipadx=10, ipady=10, expand=True)
 
 if __name__ == "__main__":
     home.mainloop()
