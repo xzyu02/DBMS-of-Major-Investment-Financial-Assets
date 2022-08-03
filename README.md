@@ -9,6 +9,7 @@ The project is a database system that preserves the historical data of couple gl
 - **7.27**: special character need to escape ('.'; '=') NOT ABLE TO SEARCH
 - **7.27**: crypto lack of **meta data**
 - **7.27**: foreign currency dataset cleansing **still NEEDED**
+- **8.2**： `./sql` folder contains initialization & stored procedure querys used for final project; `./backend-cpp` **IS NOT USED AND SHALL BE DELETED**
 
 ## ER Diagram
 Below is the ER diagram of our projects

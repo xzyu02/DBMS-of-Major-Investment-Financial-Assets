@@ -42,7 +42,7 @@ def register_validator():
 def registration():
     # register page
     global register
-    register = Toplevel(home)
+    register = Toplevel(home)   
     register.title("Registration Portal")
     register.geometry("300x250")
     global username_re
