@@ -50,24 +50,20 @@ def result():
     result.title('Query Result Page')
 
     # Row 0 introduction words
-    Label(result, text="Historical Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
+    Label(result, text="Historical Price Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
 
     # Add symbol
-    Label(result, test="Symbol").pack(side=tk.LEFT, pady=10)
+    Label(result, text="Symbol").pack(side=tk.LEFT, pady=10)
 
     # Add asset name
-    Label(result, test="Name").pack(side=tk.LEFT, pady=10)
+    Label(result, text="Name").pack(side=tk.LEFT, pady=10)
 
-    # Define the figure
-    fig = mpf.figure(figsize=(18,12), style='yahoo')
-
-    # Add a subplot in layout
-    ax = fig.add_subplot(1,1,1)
-    
-    mpf.plot(df, type='line', ax=ax, mav=(20), volume=True, style='yahoo')
+    # Insert the mpf line chart
+    # Generate the plots and return the figure
+    fig, _ = mpf.plot(df, type='line', mav=(20), volume=True, style='yahoo')
 
     # Add a canvas containing the figure
-    canvas = FigureCanvasTkAgg(fig)
+    canvas = FigureCanvasTkAgg(fig, master = result)
 
     # Draw the chart
     canvas.draw()
