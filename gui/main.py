@@ -1,7 +1,7 @@
 import time
 from tkinter import *
 from tkinter import messagebox
-import mysql.connector
+#import mysql.connector
 
 from pages import pages
 
