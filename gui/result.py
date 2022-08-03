@@ -12,15 +12,7 @@ from tkinter import messagebox
 
 import mysql.connector
 
-
-# def chart(db, query):
-#     daily = pd.read_sql(sql, db, index_col="date", parse_dates=True)
-#     daily.index = pd.DatetimeIndex(daily.index.values)
-#     # plot daily candlestick chart with volume
-#     fig = mpf.plot(daily,type='line',mav=(20),volume=True, style='yahoo')
-
-# test only
-
+# for testing purpose only
 db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
 sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, commo b WHERE a.symbol = b.symbol AND b.name = \"Gold\""
 # chart(db, sql)
@@ -51,7 +43,7 @@ def result():
     result.title('Query Result Page')
 
     # Row 0 introduction words
-    Label(result, text="Historical Price Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
+    Label(result, text="Historical Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
 
     
     symbol = df.at[df.index[0], 'Symbol']
@@ -71,7 +63,7 @@ def result():
     mpf.plot(df, type='line', ax=ax, mav=(20), style='yahoo')
     
     # Add a canvas containing the figure
-    canvas = FigureCanvasTkAgg(fig, master = result)
+    canvas = FigureCanvasTkAgg(fig)
 
     # Draw the chart
     canvas.draw()
