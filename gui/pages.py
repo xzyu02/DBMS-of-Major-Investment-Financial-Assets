@@ -1,7 +1,8 @@
 from tkinter import *
 import search as search
 
-def pages(user):
+from watchlists import watchlist_page
+def pages(user, db, mycur):
     root = Tk()
     root.geometry('300x300')
     root.title('Welcome {}'.format(user.get()))

@@ -4,8 +4,8 @@ import mysql.connector
 # connection to mysql database
 db = mysql.connector.connect(host = "localhost",
                              user = "root",
-                             password = "A1b2C3d4++",
-                             db ="user")
+                             password = "A1b2C3d4&",
+                             db ="564project")
 cursor = db.cursor() # needed for Option 2
 # A cursor allows you to iterate a set of rows returned by a query and process each row to get the desired information.
 
