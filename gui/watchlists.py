@@ -4,68 +4,16 @@ import csv
 from tkinter import messagebox
 from tkinter.filedialog import askopenfilename
 import pandas as pd
+from soupsieve import select
 
 
-def show_assets():
-    show_assets = Tk()
-    show_assets.geometry("600x600")
-    show_assets.title("Query your asset")
-    
-    #chart frame
-    chart_frame = Frame(show_assets).pack(pady=20)
-    
-    # Note words
-    Label(show_assets, text="Find assets you want to add, then manually input back to previous page").pack(ipadx=10,ipady=10, expand=False)
-    # Select Type combobox
-    global asset_type
-    asset_type = StringVar()
-    combo1 = ttk.Combobox(show_assets, textvariable=asset_type, value=["Type of Asset is ...", "Commodity", "CryptoCurrency", "Foreign Currency", "Stock"], state='readonly')
-    combo1.current(0)
-    combo1.pack(ipadx=10, ipady=10, expand=False)
-    
-    Button(show_assets, text="Start Query", command=read_csv).pack(
-        ipadx=10, ipady=10, expand=False)
-    
-    # create Treeview
-    global query_result
-    query_result = ttk.Treeview(chart_frame)
-        
 def read_csv():
-    file_name = "F:\CODE_FILE\\2022_Summer_UW_MADISON\CS564\CS564-Final-Project\dataset\_metadata_commo.csv"
-    selected = asset_type.get()
-    if selected == "Type of Asset is ...":
+    selected = select_type.get()
+    if selected == "Type of Asset ...":
+        print(selected)
         messagebox.showinfo(
             "Oops", "You have to choose a type of this asset for query.")
-        
-    elif selected == "Commodity": 
-        print("curr file name is", file_name)
-        file_name = "../dataset/_metadata_commo.csv"
-    elif selected == "CryptoCurrency":
-        file_name = "../dataset/_metadata_crypto.csv"
-    elif selected == "Foreign Currency":
-        file_name = "../dataset/_metadata_exchangeRate.csv"
-    elif selected == "Stock":
-        file_name = "../dataset/_metadata_stock.csv"
-        
-    # handle visualization csv file part
-    df = pd.read_csv(file_name)
-    
-    query_result["column"] = list(df.columns)
-    query_result["show"] = "headings"
-    
-    # loop through col list for headers
-    for col in query_result["column"]:
-        query_result.heading(col, text=col)
-    
-    # put data into treeview
-    df_rows = df.to_numpy().tolist()
-    for row in df_rows:
-        query_result.insert("", "end",values=row)
-        
-    query_result.pack()   
-            
-    
-    
+
 #def watchlist_page(root):
     # window
     #global watchlists
@@ -81,7 +29,14 @@ Label(watchlists, text="Click 'Add' to query the asset you want to add\n After f
 # add new watchlist
 Button(watchlists, text="Exit", command=None, height=1,
        width=10).pack(ipadx=10, ipady=10, expand=False) # was True before
-Button(watchlists, text="Add", command=show_assets, height=1,
+global select_type
+select_type = StringVar()
+combo2 = ttk.Combobox(watchlists, textvariable=select_type, value=[
+    "Type of Asset.. ", "Commodity", "Cryptocurrency","Foreign currency","Stock"], state='readonly')
+combo2.current(0)
+combo2.pack(ipadx=10, ipady=10, expand=False)
+
+Button(watchlists, text="Add", command=read_csv, height=1,
        width=10).pack(ipadx=10, ipady=10, expand=False)
 # .pack(side=LEFT, expand=True)
 # Watchlist chart section
@@ -103,7 +58,9 @@ list_chart.heading('Name',text='Name')
 list_chart.heading('Symbol',text='Symbol')
 list_chart.heading('Type',text='Asset Type')
 
-
+    
 
 
 watchlists.mainloop()
+
+

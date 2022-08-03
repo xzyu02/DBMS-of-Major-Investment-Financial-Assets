@@ -4,14 +4,10 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 import pandas as pd
 import mplfinance as mpf
-<<<<<<< HEAD
 
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-=======
-import tkinter as tk
->>>>>>> 4cf08e8b277cce36e403f38ea7f167d8ab83a233
 from tkinter import messagebox
 
 import mysql.connector
