@@ -8,6 +8,8 @@ from numpy import pad
 from sqlalchemy import null  
 import mysql.connector 
 
+from result import graph
+
 def connect_db():
     db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
     mycur = db.cursor()
@@ -91,7 +93,7 @@ def search_now():
         # "Foreign Currency":
     }
 
-    sql = "SELECT * FROM assets a, {} b WHERE a.symbol = b.symbol AND b.{}=\"{}\"".format(dic[category_select], type_select, enter_asset_box.get())
+    sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, {} b WHERE a.symbol = b.symbol AND b.{}=\"{}\"".format(dic[category_select], type_select, enter_asset_box.get())
     if start_date != "" and end_date != "":
         sql += "AND a.date BETWEEN \"{}\" AND \"{}\"".format(start_date, end_date)
     # querying in database
@@ -103,8 +105,7 @@ def search_now():
         messagebox.showinfo("Oops", "Sorry, but the asset you are searching is not found...")
     else:
         # import gui from result
-        messagebox.showinfo("got", result)
-        pass
+        graph(db, mycur, sql)
 
 
 
