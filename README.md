@@ -17,15 +17,16 @@ Below is the ER diagram of our projects
 
 ![image](./er.jpeg)
 
-## Remaining Key deadlines
-| Affair | Deadline
+## Remaining Key Deadlines
+| Task | Deadline
 | --- | ---
 | Checkpoint 2 | 7.3
 | Midterm EXAM | 7.7
 | Checkpoint 3 | 7.21
 | Checkpoint 4 | 7.25
-| Project Group Presentation | Anyday between 7.30 - 8.4
-| End day of the course | 8.7
+| Project - Group Presentation | 8.4
+| Last day of class | 8.3
+| Final Exam | 8.7
 
 ## Checkpoint documents:
 - [CheckPoint 1](https://docs.google.com/document/d/19wpiX-QRu7TO3zOWY4xtz111-e6vxOtdY4rdUp3xhbU/edit)
