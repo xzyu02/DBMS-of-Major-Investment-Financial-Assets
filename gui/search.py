@@ -9,22 +9,19 @@ from sqlalchemy import null
 import mysql.connector 
 
 from result import graph
-
-def connect_db():
-    db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
-    mycur = db.cursor()
-    return db, mycur
-
-db, mycur = connect_db()
     
 # Below is the code for plotting the "search" page; can be packed into the search_asset() (commented line 18) 
 # basic layout follow plotted diagram published
 #def search_asset():
 
-def search():
+def search(root, database, cursor):
+    global mycur
+    global db
+    db = database
+    mycur = cursor
     # plot window
     global search
-    search = Tk()
+    search = Toplevel(root)
     search.geometry('300x500')
     search.title('Search for an asset') 
     # ROW 0 introducing words
@@ -105,12 +102,8 @@ def search_now():
         messagebox.showinfo("Oops", "Sorry, but the asset you are searching is not found...")
     else:
         # import gui from result
-        graph(db, mycur, sql)
+        graph(db, sql)
 
-
-
-search()
-search.mainloop()
 
 
 # utilizing the calendar function

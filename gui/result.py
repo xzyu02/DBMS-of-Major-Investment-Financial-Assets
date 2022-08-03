@@ -4,15 +4,18 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 import pandas as pd
 import mplfinance as mpf
+<<<<<<< HEAD
 
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
+=======
+import tkinter as tk
+>>>>>>> 4cf08e8b277cce36e403f38ea7f167d8ab83a233
 from tkinter import messagebox
 
 import mysql.connector
 
-df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
 
 # def chart(db, query):
 #     daily = pd.read_sql(sql, db, index_col="date", parse_dates=True)
@@ -22,9 +25,12 @@ df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
 
 # test only
 
-# db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
-# sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, commo b WHERE a.symbol = b.symbol AND b.name = \"Gold\""
+db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
+sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, commo b WHERE a.symbol = b.symbol AND b.name = \"Gold\""
 # chart(db, sql)
+df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
+df.index = pd.DatetimeIndex(df.index.values)
+
 
 # def drawChart(df):
 #     # Generate the plots and retunr the figure
@@ -42,8 +48,13 @@ df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
 def result():
     
     # Plot window
+<<<<<<< HEAD
     global result
     result = Tk()
+=======
+    global search
+    result = tk.Tk()
+>>>>>>> 4cf08e8b277cce36e403f38ea7f167d8ab83a233
     result.geometry('300x400')
     result.title('Query Result Page')
 
