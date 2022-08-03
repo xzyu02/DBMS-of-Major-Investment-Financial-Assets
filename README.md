@@ -24,7 +24,7 @@ Below is the ER diagram of our projects
 | Midterm EXAM | 7.7
 | Checkpoint 3 | 7.21
 | Checkpoint 4 | 7.25
-| Project - Group Presentation | 8.4
+| Project - Group Presentation | 8.3
 | Last day of class | 8.3
 | Final Exam | 8.7
 
