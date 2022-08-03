@@ -1,6 +1,8 @@
 import pandas as pd
 import mplfinance as mpf
-
+from tkinter import *
+from tkinter import messagebox
+from tkinter import ttk
 import mysql.connector
 
 # connection to mysql database
@@ -16,17 +18,14 @@ query = "SELECT * FROM assets a WHERE symbol=%a;"
 daily = pd.read_sql(query, db)
 daily.index.name = 'Date'
 
-# plot daily candlestick chart
-mpf.plot(daily, type='candle')
+# plot daily candlestick chart with volume
+fig = mpf.plot(daily,type='candle',mav=(20),volume=True, 
+                       style='yahoo')
 
 # plot daily candlestick chart with volume
-mpf.plot(daily, type='candle', volume=True)
+fig = mpf.plot(daily,type='line',mav=(20),volume=True, 
+                       style='yahoo')
 
-# plot daily candlestick chart
-mpf.plot(daily, type='line')
-
-# plot daily candlestick chart with volume
-mpf.plot(daily, type='line', volume=True)
-
+canvas = FigureCanvasTkAgg(fig)
 
 db.close()
