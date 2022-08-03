@@ -19,6 +19,20 @@ sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, co
 df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
 df.index.name = 'Date'
 
+df_metadata = pd.read_csv("./dataset/zzz_all_metadata.csv")
+
+# def drawChart(df):
+#     # Generate the plots and retunr the figure
+#     fig, _ = mpf.plot(df, type='line', mav=(20), volume=True, style='yahoo')
+
+#     # Add a canvas containing the figure
+#     canvas = FigureCanvasTkAgg(fig)
+
+#     # Draw the chart
+#     canvas.draw()
+#     canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+
 # Plot the "query result" page
 def result():
     
@@ -31,11 +45,14 @@ def result():
     # Row 0 introduction words
     Label(result, text="Historical Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
 
-    # Add symbol as a variable
-    Label(result, text="Current Asset: %s" % df.at[df.index[0], 'Symbol']).pack(side=tk.LEFT, pady=10)
+    
+    symbol = df.at[df.index[0], 'Symbol']
+    name = df_metadata.loc[df_metadata["Symbol"] == symbol, "Name"].to_string(index=None).strip()
+    # Add symbol
+    Label(result, text="Current Asset: %s" % symbol).pack(side=tk.LEFT, ipady=10)
 
-    # Add asset name as a variable
-    Label(result, text="Name").pack(side=tk.LEFT, pady=10)
+    # Add asset name
+    Label(result, text="Name: %s" % name).pack(side=tk.LEFT, ipady=10)
 
     # Define the figure
     fig = mpf.figure(figsize=(18,12), style='yahoo')

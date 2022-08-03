@@ -1,0 +1,107 @@
+Symbol,Name
+^IXIC,NASDAQ Composite
+^DJI,Dow Jones Industrial Average
+^NYA,NYSE Composite
+^RUT,Rusell 2000
+^GSPC,S&P 500
+M.BA,MERVAL
+^GSPTSE,S&P TSX Composite index
+^BVSP,IBOVESPA
+000001.SS,SSE Composite Index
+399001.SZ,Shenzhen Component
+^HSI,Hang Seng Index
+^JKSE,Jakarta Composite Index
+^BSESN,S&P BSE SENSEX
+^N225,Nikkei 225
+^KS11,KOSPI Composite Index
+^KLSE,FTSE Bursa Malaysia KLCI
+FSTAS.SI,FTSE ST All-Share Index
+^SET.BK,SET Index
+^AXJO,S&P ASX 200
+^BFX,BEL 20
+^SSMI,SMI PR
+^OMXC25,OMX Copenhagen 25 Index
+^IBEX,IBEX 35
+^STOXX,STXE 600 PR_EUR
+^OMXHPI,OMX Helsinki_PI
+^OMX,OMX Stockholm 30 Index
+^FCHI,CAC 40
+^GDAXI,DAX PERFORMANCE-INDEX
+FTSEMIB.MI,FTSE MIB Index
+^AEX,AEX-Index
+^OSEAX,Oslo Bors All-Share Index_GI
+^FTSE,FTSE 100
+^FTMC,FTSE 250
+AUD,Australian dollar
+CAD,Canadian dollar
+CHF,Swiss franc
+CNY,Renminbi
+GBP,British pound
+HKD,Hong Kong dollar
+INR,Indian rupee
+JPY,Japanese yen
+KRW,South Korean won
+MXN,Mexican peso
+NOK,Norwegian krone
+NZD,New Zealand dollar
+RUB,Russian ruble
+SGD,Singapore dollar
+TWD,New Taiwan dollar
+EUR,Euro
+AAVE,Aave
+BNB,BinanceCoin
+BTC,Bitcoin
+ADA,Cardano
+LINK,ChainLink
+ATOM,Cosmos
+CRO,CryptocomCoin
+DOGE,Dogecoin
+EOS,EOS
+ETH,Ethereum
+MIOTA,lota
+LTC,Litecoin
+XMR,Monero
+XEM,NEM
+DOT,Polkadot
+SOL,Solana
+XLM,Stellar
+USDT,Tether
+TRX,Tron
+UNI,Uniswap
+USDC,USDCoin
+WBTC,WeappedBitcoin
+XRP,XRP
+NQ=F,Nasdaq 100
+RTY=F,E-mini Russell 2000 Index Futur
+ZB=F,U.S. Treasury Bond Futures
+ZN=F,10-Year T-Note Futures
+ZF=F,Five-Year US Treasury Note Futu
+ZT=F,2-Year T-Note Futures
+GC=F,Gold
+MGC=F,Micro Gold Futures
+SI=F,Silver
+SIL=F,Micro Silver Futures
+PL=F,Platinum
+HG=F,Copper
+PA=F,Palladium
+CL=F,Crude Oil
+HO=F,Heating Oil
+NG=F,Natural Gas
+RB=F,RBOB Gasoline
+BZ=F,Brent Crude Oil Last Day Financ
+ZC=F,Corn Futures
+ZO=F,Oat Futures
+KE=F,KC HRW Wheat Futures
+ZR=F,Rough Rice Futures
+ZM=F,Soybean Meal Futures
+ZL=F,Soybean Oil Futures
+ZS=F,Soybean Futures
+GF=F,Feeder Cattle Futures
+HE=F,Lean Hogs Futures
+LE=F,Live Cattle Futures
+CC=F,Cocoa
+KC=F,Coffee
+CT=F,Cotton
+LBS=F,Random Length Lumber Futures
+OJ=F,Orange Juice
+SB=F,Sugar
