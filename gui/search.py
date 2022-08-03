@@ -103,33 +103,3 @@ def search_now():
     else:
         # import gui from result
         graph(db, sql)
-
-
-
-# utilizing the calendar function
-# start_text_button = Button(
-#     search, text="Start Date:", command=lambda: getdate('start'))
-# start_text_button.grid(row=3, column=0)
-
-# # Start Date calendar entry
-# start_date_calendar = Entry(search, textvariable=query_start_date)
-# start_date_calendar.grid(row=3, column=1, padx=10, pady=10)
-
-# end_text_button = Button(
-#     search, text="End Date:", command=lambda: getdate('end'))
-# end_text_button.grid(row=3, column=2)
-
-# # End date calendar entry
-# end_date_calendar = Entry(search, textvariable=query_end_date)
-# end_date_calendar.grid(row=3, column=3, padx=10, pady=10)
-
-# NOT USED: helper method for getting date (from same source as the Calendar.py)
-# def getdate(type):  # 获取选择的日期
-#     for date in [Calendar().selection()]:
-#         if date:
-#             if(type == 'start'):  # 如果是开始按钮，就赋值给开始日期
-#                 query_start_date.set(date.split(" ")[0])
-#                 #print(1)
-#             elif(type == 'end'):
-#                 query_end_date.set(date.split(" ")[0])
-#                 #print(1)
