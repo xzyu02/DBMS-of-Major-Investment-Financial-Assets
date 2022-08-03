@@ -13,7 +13,7 @@ import mysql.connector
 db = mysql.connector.connect(host="localhost",
                              user="root",
                              password="A1b2C3d4&",
-                             db="users")
+                             db="564project")
 cursor = db.cursor()
     
 # Below is the code for plotting the "search" page; can be packed into the search_asset() (commented line 18) 
