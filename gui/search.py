@@ -12,8 +12,8 @@ import mysql.connector
 # NOTE: comment these db session to see the GUI interface; this code may not run
 db = mysql.connector.connect(host="localhost",
                              user="root",
-                             password="A1b2C3d4++",
-                             db="user")
+                             password="A1b2C3d4&",
+                             db="users")
 cursor = db.cursor()
     
 # Below is the code for plotting the "search" page; can be packed into the search_asset() (commented line 18) 
