@@ -9,7 +9,6 @@ db = mysql.connector.connect(host = "localhost",
                              password = "A1b2C3d4&",
                              db ="564project")
 
-
 # get pd dataframe from query result (search as an example)
 # TODO: replace query with variables and different queries, just an example query here
 query = "SELECT * FROM assets a WHERE symbol=%a;"

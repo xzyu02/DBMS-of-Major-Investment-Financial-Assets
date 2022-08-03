@@ -1,0 +1,17 @@
+Symbol,Name,Country,Continent
+AUD,Australian dollar,Australia,Asia
+CAD,Canadian dollar,Canada,North America
+CHF,Swiss franc,Switzerland,Europe
+CNY,Renminbi,China,Asia
+GBP,British pound,Great Britain,Europe
+HKD,Hong Kong dollar,Hong Kong SAR,Asia
+INR,Indian rupee,India,Asia
+JPY,Japanese yen,Japan,Asia
+KRW,South Korean won,South Korea,Asia
+MXN,Mexican peso,Mexico,North America
+NOK,Norwegian krone,Norway,Europe
+NZD,New Zealand dollar,New Zealand,Asia
+RUB,Russian ruble,Russia,Europe
+SGD,Singapore dollar,Singapore,Asia
+TWD,New Taiwan dollar,Taiwan SAR,Asia
+EUR,Euro,Europe,Europe
