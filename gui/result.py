@@ -4,14 +4,10 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 import pandas as pd
 import mplfinance as mpf
-<<<<<<< HEAD
 
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-=======
-import tkinter as tk
->>>>>>> 4cf08e8b277cce36e403f38ea7f167d8ab83a233
 from tkinter import messagebox
 
 import mysql.connector
@@ -48,13 +44,8 @@ df.index = pd.DatetimeIndex(df.index.values)
 def result():
     
     # Plot window
-<<<<<<< HEAD
     global result
     result = Tk()
-=======
-    global search
-    result = tk.Tk()
->>>>>>> 4cf08e8b277cce36e403f38ea7f167d8ab83a233
     result.geometry('300x400')
     result.title('Query Result Page')
 
@@ -67,9 +58,13 @@ def result():
     # Add asset name
     Label(result, test="Name").pack(side=tk.LEFT, pady=10)
 
-    # Insert the mpf line chart
-    # Generate the plots and return the figure
-    fig, _ = mpf.plot(df, type='line', mav=(20), volume=True, style='yahoo')
+    # Define the figure
+    fig = mpf.figure(figsize=(18,12), style='yahoo')
+
+    # Add a subplot in layout
+    ax = fig.add_subplot(1,1,1)
+    
+    mpf.plot(df, type='line', ax=ax, mav=(20), volume=True, style='yahoo')
 
     # Add a canvas containing the figure
     canvas = FigureCanvasTkAgg(fig)
