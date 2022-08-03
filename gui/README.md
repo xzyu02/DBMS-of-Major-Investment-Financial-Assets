@@ -6,6 +6,11 @@ currently not used; possibly to be used if need a visualized "date" selection fu
 ## `search.py`
 The basic GUI figure follows this image design below:
 
-Blueprint & current effect image as shown
+Blueprint as shown
 ![image_1](./design_blueprint/search_draftPrint.jpg)
-![image_2](./design_blueprint/search_currentEffectImage.JPG)
+
+
+## `watchlists.py`
+
+Blueprint as shown
+![image_2](./design_blueprint/watchlist_draftPrint.jpg)
