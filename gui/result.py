@@ -44,7 +44,7 @@ def result():
     ax = fig.add_subplot(1,1,1)
     
     mpf.plot(df, type='line', ax=ax, mav=(20), style='yahoo')
-
+    
     # Add a canvas containing the figure
     canvas = FigureCanvasTkAgg(fig)
 
