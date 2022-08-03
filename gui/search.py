@@ -10,11 +10,12 @@ import mysql.connector
 # handle connecting to database
 # TODO: pending further modification; used in search_now() method at line 111
 # NOTE: comment these db session to see the GUI interface; this code may not run
+'''
 db = mysql.connector.connect(host="localhost",
                              user="root",
                              password="A1b2C3d4++",
                              db="user")
-cursor = db.cursor()
+cursor = db.cursor()'''
     
 # Below is the code for plotting the "search" page; can be packed into the search_asset() (commented line 18) 
 # basic layout follow plotted diagram published
