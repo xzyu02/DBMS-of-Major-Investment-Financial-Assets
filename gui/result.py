@@ -17,7 +17,7 @@ db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2
 sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, commo b WHERE a.symbol = b.symbol AND b.name = \"Gold\""
 # chart(db, sql)
 df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
-df.index = pd.DatetimeIndex(df.index.values)
+df.index.name = 'Date'
 
 # Plot the "query result" page
 def result():
