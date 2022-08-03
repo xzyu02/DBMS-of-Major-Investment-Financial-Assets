@@ -4,9 +4,12 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 import pandas as pd
 import mplfinance as mpf
+
+import tkinter as tk
+from tkinter import ttk
 from tkinter import *
 from tkinter import messagebox
-from tkinter import ttk
+
 import mysql.connector
 
 df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
@@ -23,8 +26,38 @@ df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
 # sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, commo b WHERE a.symbol = b.symbol AND b.name = \"Gold\""
 # chart(db, sql)
 
-def drawChart(df):
-    # Generate the plots and retunr the figure
+# def drawChart(df):
+#     # Generate the plots and retunr the figure
+#     fig, _ = mpf.plot(df, type='line', mav=(20), volume=True, style='yahoo')
+
+#     # Add a canvas containing the figure
+#     canvas = FigureCanvasTkAgg(fig)
+
+#     # Draw the chart
+#     canvas.draw()
+#     canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+
+# Plot the "query result" page
+def result():
+    
+    # Plot window
+    global result
+    result = Tk()
+    result.geometry('300x400')
+    result.title('Query Result Page')
+
+    # Row 0 introduction words
+    Label(result, text="Historical Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
+
+    # Add symbol
+    Label(result, test="Symbol").pack(side=tk.LEFT, pady=10)
+
+    # Add asset name
+    Label(result, test="Name").pack(side=tk.LEFT, pady=10)
+
+    # Insert the mpf line chart
+    # Generate the plots and return the figure
     fig, _ = mpf.plot(df, type='line', mav=(20), volume=True, style='yahoo')
 
     # Add a canvas containing the figure
@@ -34,21 +67,6 @@ def drawChart(df):
     canvas.draw()
     canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
 
-
-# Plot the "query result" page
-def result():
-    
-    # Plot window
-    global search
-    result = Tk()
-    result.geometry('300x400')
-    result.title('Query Result Page')
-
-    # # Row 0 introduction words
-    # Label(result, text="Historical Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
-
-    # Insert the mpf line chart
-    drawChart(df)
-
-result()
-result.mainloop()
+if __name__ == '__main__':
+    result()
+    result.mainloop()
