@@ -18,7 +18,7 @@ def login_validator():
     results = mycur.fetchall()
     if results:
         home.destroy()
-        pages(username_varify) # open the main portal
+        pages(username_varify, db) # open the main portal
     else:
         # username-password pair not in db
         messagebox.showinfo("Oops", "Incorrect Username or Password. Please try again!")

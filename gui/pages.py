@@ -1,6 +1,7 @@
 from tkinter import *
 
-def pages(user):
+from watchlists import watchlist_page
+def pages(user, db):
     root = Tk()
     root.geometry('300x300')
     root.title('Welcome {}'.format(user.get()))
