@@ -12,7 +12,6 @@ from tkinter import messagebox
 
 import mysql.connector
 
-
 # def chart(db, query):
 #     daily = pd.read_sql(sql, db, index_col="date", parse_dates=True)
 #     daily.index = pd.DatetimeIndex(daily.index.values)
@@ -53,10 +52,10 @@ def result():
     Label(result, text="Historical Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
 
     # Add symbol
-    Label(result, test="Symbol").pack(side=tk.LEFT, pady=10)
+    Label(result, text="Symbol").pack(side=tk.LEFT, pady=10)
 
     # Add asset name
-    Label(result, test="Name").pack(side=tk.LEFT, pady=10)
+    Label(result, text="Name").pack(side=tk.LEFT, pady=10)
 
     # Define the figure
     fig = mpf.figure(figsize=(18,12), style='yahoo')
@@ -64,7 +63,7 @@ def result():
     # Add a subplot in layout
     ax = fig.add_subplot(1,1,1)
     
-    mpf.plot(df, type='line', ax=ax, mav=(20), volume=True, style='yahoo')
+    mpf.plot(df, type='line', ax=ax, mav=(20), style='yahoo')
 
     # Add a canvas containing the figure
     canvas = FigureCanvasTkAgg(fig)
