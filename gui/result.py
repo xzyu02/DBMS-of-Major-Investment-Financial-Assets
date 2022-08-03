@@ -53,7 +53,7 @@ def result():
     Label(result, text="Historical Price Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
 
     # Add symbol
-    Label(result, text="%s" % df.at[df.index[0], 'Symbol']).pack(side=tk.LEFT, pady=10)
+    Label(result, text="This is %s" % df.at[df.index[0], 'Symbol']).pack(side=tk.LEFT, pady=10)
 
     # Add asset name
     Label(result, text="name").pack(side=tk.LEFT, pady=10)
