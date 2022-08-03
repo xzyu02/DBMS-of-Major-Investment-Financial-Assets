@@ -4,26 +4,21 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 import pandas as pd
 import mplfinance as mpf
+
+import tkinter as tk
+from tkinter import ttk
 from tkinter import *
 from tkinter import messagebox
 
 import mysql.connector
 
-
-def graph(db, query):
-    daily = pd.read_sql(query, db, index_col="date", parse_dates=True)
-    daily.index = pd.DatetimeIndex(daily.index.values)
-    # plot daily candlestick chart with volume
-    fig = mpf.plot(daily,type='line',mav=(20),volume=True, style='yahoo')
-
 # test only
 '''
-db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
-sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, commo b WHERE a.symbol = b.symbol AND b.name = \"Gold\""
+
 # chart(db, sql)
 df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
 df.index = pd.DatetimeIndex(df.index.values)
-
+'''
 
 # def drawChart(df):
 #     # Generate the plots and retunr the figure
@@ -38,35 +33,42 @@ df.index = pd.DatetimeIndex(df.index.values)
 
 
 # Plot the "query result" page
-def result():
-    
+def result(db, query):
+    df = pd.read_sql(query, db, index_col="date", parse_dates=True)
+    df.index = pd.DatetimeIndex(df.index.values)
+
     # Plot window
-    global search
+    global result
     result = Tk()
     result.geometry('300x400')
     result.title('Query Result Page')
 
     # Row 0 introduction words
-    Label(result, text="Historical Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
+    Label(result, text="Historical Price Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
 
     # Add symbol
-    Label(result, text="Symbol").pack(side=LEFT, pady=10)
+    Label(result, text="This is %s" % df.at[df.index[0], 'Symbol']).pack(side=tk.LEFT, pady=10)
 
     # Add asset name
-    Label(result, text="Name").pack(side=LEFT, pady=10)
+    Label(result, text="name").pack(side=tk.LEFT, pady=10)
 
-    # Insert the mpf line chart
-    # Generate the plots and return the figure
-    fig, _ = mpf.plot(df, type='line', mav=(20), volume=True, style='yahoo')
+    # Define the figure
+    fig = mpf.figure(figsize=(18,12), style='yahoo')
 
+    # Add a subplot in layout
+    ax = fig.add_subplot(1,1,1)
+    
+    mpf.plot(df, type='line', ax=ax, mav=(20), style='yahoo')
+    
     # Add a canvas containing the figure
-    canvas = FigureCanvasTkAgg(fig)
+    canvas = FigureCanvasTkAgg(fig, master = result)
 
     # Draw the chart
     canvas.draw()
     canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
 
 if __name__ == '__main__':
-    result()
+    db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
+    sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, commo b WHERE a.symbol = b.symbol AND b.name = \"Gold\""
+    result(db, sql)
     result.mainloop()
-'''

@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 import mysql.connector 
 import pandas as pd
+import mplfinance as mpf
 
 def currency_page(root, db, mycur):
     global curr
@@ -25,6 +26,9 @@ def currency_page(root, db, mycur):
 
     Button(curr, text="Get Result Graph", command=get_result).pack(ipadx=10, ipady=10, expand=False)
 
-def get_result():
-    pass
+def get_result(db):
+    sql = "m"
+    df = pd.read_sql(sql, db, index_col="date", parse_dates=True)
+    df.index = pd.DatetimeIndex(df.index.values)
+    pass    
 
