@@ -1,13 +1,17 @@
 import time
 from tkinter import *
 from tkinter import messagebox
-#import mysql.connector
+import mysql.connector
 
 from pages import pages
 
+def connect_db():
+    db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
+    mycur = db.cursor()
+    return db, mycur
+
 #connecting to the database
-db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
-mycur = db.cursor()
+db, mycur = connect_db()
 
 def login_validator():
     user_varify = username_varify.get()
@@ -18,7 +22,7 @@ def login_validator():
     results = mycur.fetchall()
     if results:
         home.destroy()
-        pages(username_varify, db) # open the main portal
+        pages(username_varify, db, mycur) # open the main portal
     else:
         # username-password pair not in db
         messagebox.showinfo("Oops", "Incorrect Username or Password. Please try again!")
@@ -42,7 +46,7 @@ def register_validator():
 def registration():
     # register page
     global register
-    register = Toplevel(home)
+    register = Toplevel(home)   
     register.title("Registration Portal")
     register.geometry("300x250")
     global username_re
