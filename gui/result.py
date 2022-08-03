@@ -53,15 +53,19 @@ def result():
     Label(result, text="Historical Price Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
 
     # Add symbol
-    Label(result, text="Symbol: %s" % df.at[df.index]).pack(side=tk.LEFT, pady=10)
+    Label(result, text="%s" % df.at[df.index[0], 'Symbol']).pack(side=tk.LEFT, pady=10)
 
     # Add asset name
-    Label(result, text="Name").pack(side=tk.LEFT, pady=10)
+    Label(result, text="name").pack(side=tk.LEFT, pady=10)
 
-    # Insert the mpf line chart
-    # Generate the plots and return the figure
-    fig, _ = mpf.plot(df, type='line', mav=(20), volume=True, style='yahoo')
+    # Define the figure
+    fig = mpf.figure(figsize=(18,12), style='yahoo')
 
+    # Add a subplot in layout
+    ax = fig.add_subplot(1,1,1)
+    
+    mpf.plot(df, type='line', ax=ax, mav=(20), style='yahoo')
+    
     # Add a canvas containing the figure
     canvas = FigureCanvasTkAgg(fig, master = result)
 
