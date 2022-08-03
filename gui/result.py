@@ -4,27 +4,20 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 import pandas as pd
 import mplfinance as mpf
-<<<<<<< HEAD
-
-import tkinter as tk
-from tkinter import ttk
 from tkinter import *
-=======
-import tkinter as tk
->>>>>>> 4cf08e8b277cce36e403f38ea7f167d8ab83a233
 from tkinter import messagebox
 
 import mysql.connector
 
 
-# def chart(db, query):
-#     daily = pd.read_sql(sql, db, index_col="date", parse_dates=True)
-#     daily.index = pd.DatetimeIndex(daily.index.values)
-#     # plot daily candlestick chart with volume
-#     fig = mpf.plot(daily,type='line',mav=(20),volume=True, style='yahoo')
+def graph(db, query):
+    daily = pd.read_sql(query, db, index_col="date", parse_dates=True)
+    daily.index = pd.DatetimeIndex(daily.index.values)
+    # plot daily candlestick chart with volume
+    fig = mpf.plot(daily,type='line',mav=(20),volume=True, style='yahoo')
 
 # test only
-
+'''
 db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
 sql = "SELECT a.date, a.open, a.high, a.low, a.close, a.volume FROM assets a, commo b WHERE a.symbol = b.symbol AND b.name = \"Gold\""
 # chart(db, sql)
@@ -48,13 +41,8 @@ df.index = pd.DatetimeIndex(df.index.values)
 def result():
     
     # Plot window
-<<<<<<< HEAD
-    global result
-    result = Tk()
-=======
     global search
-    result = tk.Tk()
->>>>>>> 4cf08e8b277cce36e403f38ea7f167d8ab83a233
+    result = Tk()
     result.geometry('300x400')
     result.title('Query Result Page')
 
@@ -62,10 +50,10 @@ def result():
     Label(result, text="Historical Line Chart with Volume").pack(ipadx=10, ipady=10, expand=False)
 
     # Add symbol
-    Label(result, test="Symbol").pack(side=tk.LEFT, pady=10)
+    Label(result, text="Symbol").pack(side=LEFT, pady=10)
 
     # Add asset name
-    Label(result, test="Name").pack(side=tk.LEFT, pady=10)
+    Label(result, text="Name").pack(side=LEFT, pady=10)
 
     # Insert the mpf line chart
     # Generate the plots and return the figure
@@ -76,8 +64,9 @@ def result():
 
     # Draw the chart
     canvas.draw()
-    canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
 
 if __name__ == '__main__':
     result()
     result.mainloop()
+'''

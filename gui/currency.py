@@ -3,17 +3,9 @@ from tkinter import ttk
 import mysql.connector 
 import pandas as pd
 
-def connect_db():
-    db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")
-    mycur = db.cursor()
-    return db, mycur
-
-db, mycur = connect_db()
-
-# root, db, mycur
-def currency_page():
+def currency_page(root, db, mycur):
     global curr
-    curr = Tk() # Toplevel(root)
+    curr = Toplevel(root)
     curr.geometry('300x300')
     curr.title('Select a currency') 
 
@@ -36,5 +28,3 @@ def currency_page():
 def get_result():
     pass
 
-currency_page()
-curr.mainloop()
