@@ -49,10 +49,10 @@ def result():
     symbol = df.at[df.index[0], 'Symbol']
     name = df_metadata.loc[df_metadata["Symbol"] == symbol, "Name"].to_string(index=None).strip()
     # Add symbol
-    Label(result, text="Current Asset: %s" % symbol).pack(ipadx=10, ipady=10, expand=False)
+    Label(result, text="Current Asset: %s" % symbol).pack(side=tk.LEFT, ipady=10)
 
     # Add asset name
-    Label(result, text="Name: %s" % name).pack(ipadx=10, ipady=10, expand=False)
+    Label(result, text="Name: %s" % name).pack(side=tk.LEFT, ipady=10)
 
     # Define the figure
     fig = mpf.figure(figsize=(18,12), style='yahoo')
