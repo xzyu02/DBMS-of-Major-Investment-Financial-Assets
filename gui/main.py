@@ -90,7 +90,5 @@ def main_screen():
     Button(home, text="Register", command=registration, height=1, width = 10).pack(ipadx=10, ipady=10, expand=True)
 
 
-
-
 main_screen()
 home.mainloop()

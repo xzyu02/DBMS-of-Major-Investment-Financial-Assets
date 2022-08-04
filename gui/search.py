@@ -33,7 +33,7 @@ def search(root, database, cursor):
     # Drop down box #1: Category of the assets to search
     global asset_category
     asset_category = StringVar()
-    combo1 = ttk.Combobox(search, textvariable=asset_category, value=["Category of Asset is ...", "Commodity", "CryptoCurrency", "Foreign Currency", "Stock"], state='readonly')
+    combo1 = ttk.Combobox(search, textvariable=asset_category, value=["Category of Asset is ...", "Commodity", "CryptoCurrency", "Stock"], state='readonly')
     combo1.current(0)
     combo1.pack(ipadx=10, ipady=10, expand=False)
     # Drop down box #2: Search by symbol or name
