@@ -64,6 +64,7 @@ def insert_to_db(_user, str, _type):
     mycur.execute(sql, t)
     db.commit()
     messagebox.showinfo("Success", "Insert Success!! \n Reopen watchlist page to get your latest watchlist list!")
+    show_assets.destroy()
     watchlists.destroy()
 
     

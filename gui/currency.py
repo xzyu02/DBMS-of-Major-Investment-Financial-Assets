@@ -1,9 +1,11 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
 import mysql.connector 
 import pandas as pd
 import mplfinance as mpf
 import matplotlib.pyplot as plt
+
 
 def currency_page(root, db, mycur):
     global curr
@@ -15,7 +17,7 @@ def currency_page(root, db, mycur):
 
     df = pd.read_csv("dataset/_metadata_exchangeRate.csv")
 
-    namelist = []
+    namelist = ["..."]
     for i, row in df.iterrows():
         namelist.append(row["Name"] + " (" + row["Symbol"] + ")")
 
@@ -25,20 +27,28 @@ def currency_page(root, db, mycur):
     combo1.current(0)
     combo1.pack(ipadx=10, ipady=10, expand=False)
 
+    Button(curr, text="Get Result Graph", command=lambda: get_result(db)).pack(ipadx=10, ipady=10, expand=False)
+
+def get_result(db):
     str = selected.get()
+    if str == "...":
+        messagebox.showinfo("Oops", "You have not choose a currency!")
+        return
     symbol = str[str.find("(")+1:str.find(")")]
-    Button(curr, text="Get Result Graph", command=lambda: get_result(symbol, db)).pack(ipadx=10, ipady=10, expand=False)
 
-def get_result(symbol, db):
     sql = "SELECT date, price FROM currency WHERE symbol = \"{}\"".format(symbol)
-    df = pd.read_sql(sql, db, parse_dates=True)
-
+    df = pd.read_sql(sql, db)
+    
     df["date"] = pd.to_datetime(df["date"])
-
-    date = df["date"]
-    value = df["price"]   
-
-    fig, ax = plt.subplots(figsize=(8, 6))
-    ax.plot(date, value)
+    df = df.set_index('date')
+    df["price"] = pd.to_numeric(df["price"])
+    #print(df["price"].head(10))
+    df["price"].plot()
     plt.show()
+    '''
+    fig, ax = plt.subplots()
+    ax.plot(df.index, df["price"])
+    plt.show()
+    '''
 
+#get_result("CNY", db)
