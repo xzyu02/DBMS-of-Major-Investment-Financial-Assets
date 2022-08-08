@@ -4,6 +4,9 @@ This is the repository for CS 564 Summer 2022 final group project.
 
 The project is a database system that preserves the historical data of couple global investments, including **Stocks, Cryptocurrencies, Commodities, and Forex Tradings.** Details of this project will be filled as progress are made in the future.
 
+- To connect this application to your database, please open `main.py` and go to line `9` to find `db = mysql.connector.connect(host = "localhost", user = "root", password = "A1b2C3d4&", db ="564project")` and replace parameters to connect your own db.
+- To run this application, connect db and run `main.py`.
+
 ## UPDATE NOTICES:
 - **7.27**: stock_merged.csv have format errors: need to clear whitespaces in first col (Symbol)
 - **7.27**: special character need to escape ('.'; '=') NOT ABLE TO SEARCH
